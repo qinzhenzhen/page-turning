@@ -1,0 +1,389 @@
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, textarea, p, blockquote, th, td {
+    margin: 0;
+    padding: 0
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+    display: block
+}
+
+fieldset, img {
+    border: 0
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0
+}
+
+li {
+    list-style: none
+}
+
+a, a:hover {
+    text-decoration: none;
+    color: #ffe400;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    line-height: 1.5;
+    font-size: 12px;
+    font-family: "hiragino sans gb", Arial;
+    color: #fff;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0)
+}
+
+.wrap {
+    position: relative;
+    color: #fff;
+    height: 100%;
+    overflow: hidden;
+}
+
+.hide {
+    display: none;
+}
+
+/*页面加载提示*/
+.mod_loading {
+    position: absolute;
+    height: 100%;
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+    background-color: #b9ccd5;
+    display: -webkit-box;
+    -webkit-box-align: center;
+}
+
+.mod_loading .content {
+    text-align: center;
+    -webkit-box-flex: 1;
+    margin: 0 80px;
+}
+
+.mod_loading .content .progress {
+    height: 13px;
+    padding: 2px;
+    -webkit-border-radius: 17px;
+    border-radius: 17px;
+    background-color: #242a39;
+}
+
+.mod_loading .content .progress span {
+    display: block;
+    height: 13px;
+    -webkit-border-radius: 13px;
+    border-radius: 13px;
+    background-color: #65cfd5;
+}
+
+.mod_loading .content p {
+    line-height: 34px;
+    color: #5f696a;
+}
+
+/*滑块*/
+.slider {
+    position: absolute;
+    width: 36px;
+    height: 36px;
+    margin-left: -18px;
+    left: 50%;
+    bottom: 10px;
+    z-index: 9999;
+}
+
+.slider span {
+    position: absolute;
+    width: 24px;
+    height: 35px;
+    left: 50%;
+    top: 50%;
+    margin: -17px 0 0 -12px;
+    background-position: -158px -46px;
+    -webkit-animation: slide_up 2s infinite ease-out;
+}
+
+@-webkit-keyframes slide_up {
+    0%, 30% {
+        opacity: 0;
+        -webkit-transform: translate3d(0, 10px, 0);
+    }
+    60% {
+        opacity: 1;
+        -webkit-transform: translate3d(0, 0, 0);
+    }
+    100% {
+        opacity: 0;
+        -webkit-transform: translate3d(0, -8px, 0);
+    }
+}
+
+@media screen and (max-height: 425px) {
+
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5), not all, only screen and (min-resolution: 425dpi) {
+    .sprite_global {
+        background-image: url(../img/sprite_global@2x.png);
+        background-size: 355px;
+    }
+}
+
+/*音乐*/
+img.hovertreemusic {
+    animation: hovertreerotate 2s linear infinite;
+    -webkit-animation: hovertreerotate 2s linear infinite; /*Safari and Chrome*/
+}
+
+@keyframes hovertreerotate {
+    from {
+        transform: rotate(0deg);
+        -ms-transform: rotate(0deg); /* IE 9 */
+        -moz-transform: rotate(0deg); /* Firefox */
+        -webkit-transform: rotate(0deg); /* Safari 和 Chrome */
+        -o-transform: rotate(0deg); /* Opera */
+    }
+    to {
+        transform: rotate(360deg);
+        -ms-transform: rotate(360deg); /* IE 9 */
+        -moz-transform: rotate(360deg); /* Firefox */
+        -webkit-transform: rotate(360deg); /* Safari 和 Chrome */
+        -o-transform: rotate(360deg); /* Opera */
+    }
+}
+
+@-webkit-keyframes hovertreerotate /*Safari and Chrome*/
+{
+    from {
+        transform: rotate(0deg);
+        -ms-transform: rotate(0deg); /* IE 9 */
+        -moz-transform: rotate(0deg); /* Firefox */
+        -webkit-transform: rotate(0deg); /* Safari 和 Chrome */
+        -o-transform: rotate(0deg); /* Opera */
+    }
+    to {
+        transform: rotate(360deg);
+        -ms-transform: rotate(360deg); /* IE 9 */
+        -moz-transform: rotate(360deg); /* Firefox */
+        -webkit-transform: rotate(360deg); /* Safari 和 Chrome */
+        -o-transform: rotate(360deg); /* Opera */
+    }
+}
+
+/*分享*/
+#shareit {
+    -webkit-user-select: none;
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    text-align: center;
+    top: 0;
+    left: 0;
+    z-index: 105;
+}
+
+#shareit img {
+    max-width: 100%;
+}
+
+.arrow {
+    position: absolute;
+    right: 10%;
+    top: 5%;
+}
+
+#follow {
+    margin-top: 400px;
+    font-size: 0.5rem;
+    color: white;
+    position: absolute;
+    right: 20%;
+    top: -10%;
+}
+
+.item, .item .box {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.item {
+    background-color: #0f0f0f;
+}
+
+#bg1 {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 100%;;
+}
+
+#logo1 {
+    position: absolute;
+    left: 0.65rem;
+    width: 6.25rem;
+    bottom: 100%;
+}
+
+#bg2 {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 100%;;
+}
+
+#logo2 {
+    position: absolute;
+    width: 5rem;
+    left: 1.3rem;
+    bottom: 100%;
+}
+
+#music {
+    width: 29px;
+    height: 29px;
+    right: 18px;
+    top: 18px;
+    opacity: 1;
+    position: absolute;
+    display: block;
+    z-index: 1000;
+    touch-action: pan-y;
+    user-select: none;
+    -webkit-user-drag: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+#img_bg {
+    /*display: block;*/
+    display: none;
+    border: 0;
+    width: 7.2rem;
+    height: 11.8rem;
+}
+
+#img_bg2 {
+    width: 7.2rem;
+    height: 11.8rem;
+    display: block;
+    /*display: none;*/
+    position: absolute;
+    left: 0;
+    top: 12.8rem;
+    border: 0;
+
+    /*background-color: #0f0f0f;*/
+}
+
+#logo {
+    position: absolute;
+    display: block;
+    left: 0.65rem;
+    width: 6.25rem;
+    bottom: 11.8rem;
+}
+
+.stars_box {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 7.2rem;
+    height: 100%;
+}
+
+.btn_center, .btn_left, .btn_right {
+    width: 2.655rem;
+    height: 1.59rem;
+    position: absolute;
+    bottom: 0.87rem;
+}
+
+.btn_left {
+    left: 0.4rem;
+}
+
+.btn_right {
+    right: 0.4rem;
+}
+
+.btn_center {
+    left: 2.3rem;
+}
+
+.video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: none;
+}
+
+.video video {
+    width: 7rem;
+    height: 4rem;
+    position: absolute;
+    top: 3.6rem;
+    left: 0.1rem;
+}
+
+#close_btn {
+    display: block;
+    width: 0.6rem;
+    height: 0.6rem;
+    position: absolute;
+    top: 2.5rem;
+    right: 0.5rem;
+}
+
+.loading {
+    width: 6.8rem;
+    height: 0.2rem;
+    border-radius: 1rem;
+    position: absolute;
+    left: 0.2rem;
+    bottom: 2rem;
+}
+
+.loading_bar {
+    width: 0;
+    height: 0.2rem;
+    background: #a4cf6c;
+    border-radius: 1rem;
+}
+
+.pyq_bg {
+    width: 7.2rem;
+    height: 11.8rem;
+    float: left;
+}
+
+.pyq_bg img {
+    display: block;
+    width: 7.2rem;
+    height: 11.8rem;
+}
+
+.all_pyq_bg {
+    width: 7.2rem;
+    /*height: 51.52rem;*/
+}
+
+.x-pullfresh-more {
+    font-size: 0.3rem;
+    text-align: center;
+    padding: 0.3rem 0rem;
+}

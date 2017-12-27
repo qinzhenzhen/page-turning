@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>八武将出世，谁与争锋</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"/>
+    <link rel="stylesheet" type="text/css" href="css/public.css"/>
+    <script src="js/jquery-3.1.1.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/iSlider.js"></script>
+    <script src="js/rem.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/sonic.js"></script>
+    <script src="js/index.js"></script>
+</head>
+<script>
+    window.debug = true;
+</script>
+<body class="bodybox">
+<div class="wrap" id="wrap">
+    <div class="item item-1">
+        <img src="img/1.4-min.png" id="bg1"/>
+        <img src="img/1.3-min.png" id="logo1"/>
+        <div class="stars_box">
+            <div class="btn_center"><img src="img/btn_ygp.png" style="width: 100%;height:100%;"></div>
+        </div>
+    </div>
+    <div class="item item-2">
+        <img src="img/bg2.jpg" id="bg2"/>
+        <img src="img/1.3-min.png" id="logo2"/>
+        <div class="stars_box">
+            <div class="btn_left"><img src="img/btn_play.gif" style="width: 100%;height:100%;"></div>
+            <div class="btn_right"><img src="img/btn_share.gif" style="width: 100%;height:100%;"></div>
+        </div>
+    </div>
+    <div class="item item-3">
+        <p>Loading...</p>
+    </div>
+</div>
+<!--分享-->
+<div id="shareit">
+    <img class="arrow" src="http://dev.vxtong.com/cases/nuannan/imgs/share-it.png">
+    <a href="#" id="follow">点击右上角<br>将它分享到朋友圈<br>或指定的朋友</a>
+</div>
+<!--预告片-->
+<div class="video">
+    <img src="img/close-min.png" id="close_btn">
+    <video id="onlyvideo" src="http://push-1252142391.coscd.myqcloud.com/video_720.mp4" controls="controls" poster="img/thumbnail.jpg"></video>
+</div>
+<!--背景音乐-->
+<div style="position: absolute; top: 0.3rem; right: 0.2rem; pointer-events: auto;">
+    <img id="music" class="hovertreemusic" style="width: 0.5rem; height: 0.5rem; visibility: visible; display: block;"
+         src="data:image/png;base64,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">
+</div>
+<audio id="musicid" src="music/bg_music.aac" preload="preload" autoplay="autoplay" loop="loop">您的浏览器不支持 audio标签。</audio>
+<!-- 加载提示 _S -->
+<div class="global">
+    <div class="slider"><span class="sprite_global"></span></div>
+</div>
+<div class="mod_loading" id="loading" style="display:none">
+    <div class="content">
+        <div class="progress"><span id="progress_bg" style="width:0;"></span></div>
+        <p>Loading...</p>
+    </div>
+</div>
+</body>
+</html>
+<script>
+    var musicPlay = true;
+    $(function () {
+        $('#music').on('click', function () {
+            var audio = document.getElementById('musicid');
+            if (musicPlay) {
+                $(this).removeClass('hovertreemusic');
+                musicPlay = false;
+                audio.pause();
+            } else {
+                $(this).addClass('hovertreemusic');
+                musicPlay = true;
+                audio.play();
+            }
+        });
+    })
+</script>
+<script>
+    var myslider = null;
+    var viewIndex = 0;
+    var sparklehInit = [];
+
+    document.addEventListener("DOMContentLoaded", function (event) {
+        $("#loading").show();
+    });
+
+    window.addEventListener("load", function (event) {
+        $("#loading").hide();
+        //翻页特效
+        myslider = new iSlider({
+            wrap: '#wrap',
+             item: '.item',
+            lastLocate: false,
+            onslide: function (index) {
+                console.log(index);
+                viewIndex = index;
+
+                if (index == 0) {
+                    $("#bg1").animate({'top': '0rem'}, 800, "swing", function () {
+                        $('.stars_box').eq(index).show();
+                        if (sparklehInit.indexOf(index) === -1)
+                            sparklehInit.push(index);
+                        $("#bg1").imagesLoaded(function () {
+                            $(".item-1").sparkleh({color: ["#00afec", "#fb6f4a", "#fdfec5"]});
+                        });
+                    });
+                    $("#logo1").animate({'bottom': '2.35rem'}, 800);
+                } else if (index == 1 && sparklehInit.indexOf(index) == -1) {
+                     window.location.href = "pyq.html";
+                    // $("#bg2").animate({'top': '0rem'}, 800, "swing", function () {
+                    //     $('.stars_box').eq(index).show();
+                    //     if (sparklehInit.indexOf(index) === -1)
+                    //         sparklehInit.push(index);
+                    //     $("#bg2").imagesLoaded(function () {
+                    //         $(".item-2").sparkleh({color: ["#00afec", "#fb6f4a", "#fdfec5"]});
+                    //     });
+                    // });
+                    // $("#logo2").animate({'top': '2.8rem'}, 800);
+                } else if (index == 2) {
+                    // window.location.href = "pyq.html";
+                }
+                if (index < 2) {
+                    $('.slider').show()
+                } else {
+                    $('.slider').hide();
+                }
+            }
+        });
+
+        $("#close_btn").click(function () {
+            $(".video").hide();
+            var video = document.getElementById('onlyvideo');
+            video.pause();
+            musicplay = false;
+            $('#music').click();
+        });
+
+        $(".btn_center").on('click', function () {
+            if (viewIndex == 0) {
+                $(".video").show();
+                var video = document.getElementById('onlyvideo');
+                musicplay = true;
+                $('#music').click();
+                video.play();
+            }
+        });
+        $(".btn_left").on('click', function () {
+            if (viewIndex == 1) {
+                alert("搜狐视频，12月28日，敬请期待!");
+            }
+        });
+        $(".btn_right").on('click', function () {
+            if (viewIndex == 1) {
+                $("#shareit").show();
+                $("#music").hide();
+            }
+        });
+        $("#shareit").on("click", function () {
+            $("#shareit").hide();
+            $("#music").show();
+        });
+    });
+    $(window).on('unload', function () {
+
+    });
+</script>
